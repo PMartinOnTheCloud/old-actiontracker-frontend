@@ -1,0 +1,81 @@
+
+<div>
+    <mat-card>
+
+        <mat-card-title>
+            {{'ENTITY_MODIFIER.DISPLAY_COLUMNS' | translate }}
+            <button mat-raised-button color="accent"
+                    class="showDisplayColumns"
+                    (click)="handleShowDisplayColumnsClick()">
+                {{showColumns ? 'Hide' : 'Show'}}
+            </button>
+        </mat-card-title>
+
+        <div *ngIf="_data.length !== 0 && showColumns" class="display-columns">
+            <mat-checkbox *ngFor="let column of _data[0] | keys"
+                          [checked]="columns.indexOf(column) >= 0"
+                          (change)="handleColumnVisibilityChange(column)" >
+                {{column.toUpperCase()}}
+            </mat-checkbox>
+        </div>
+
+    </mat-card>
+</div>
+
+<ng-container *ngIf="columns.length > 0" >
+    <mat-table  #table [dataSource]="dataSource" class="mat-elevation-z1" matSort>
+
+        <div *ngFor="let key of columns">
+
+            <ng-container [matColumnDef]="key" >
+
+                <ng-container *ngIf="sortableColumns.indexOf(key) < 0">
+                    <mat-header-cell *matHeaderCellDef>{{key.toUpperCase()}}</mat-header-cell>
+                </ng-container>
+
+                <ng-container *ngIf="sortableColumns.indexOf(key) >= 0">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>{{key.toUpperCase()}}</mat-header-cell>
+                </ng-container>
+
+                <mat-cell *matCellDef="let element">{{element[key]}}</mat-cell>
+            </ng-container>
+
+        </div>
+
+        <ng-container matColumnDef="select">
+            <mat-header-cell *matHeaderCellDef>
+                <mat-checkbox (change)="$event ? masterToggle() : null"
+                              [checked]="selection.hasValue() && isAllSelected()"
+                              [indeterminate]="selection.hasValue() && !isAllSelected()">
+                </mat-checkbox>
+                <ng-container *ngIf="this.selection.selected.length > 0" >
+                    <mat-icon (click)="handleSelectedDeleteClick($event)"
+                              id="delete-all-icon" class="delete-icon"
+                              [title]="'ENTITY_MODIFIER.DELETE_SELECTED' | translate">
+                        delete_forever
+                    </mat-icon>
+                </ng-container>
+            </mat-header-cell>
+            <mat-cell *matCellDef="let row">
+                <mat-checkbox (click)="$event.stopPropagation()"
+                              (change)="$event ? selection.toggle(row) : null"
+                              [checked]="selection.isSelected(row)">
+                </mat-checkbox>
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="delete">
+            <mat-header-cell *matHeaderCellDef class="centered-inline">
+                {{('ENTITY_MODIFIER.DELETE' | translate).toUpperCase()}}
+            </mat-header-cell>
+            <mat-cell *matCellDef="let entity" class="centered-inline">
+                <mat-icon (click)="handleDeleteClick($event, entity)" class="delete-icon"
+                          [title]="'ENTITY_MODIFIER.DELETE' | translate">delete</mat-icon>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="getAllColumns()"></mat-header-row>
+        <mat-row *matRowDef="let item; columns: getAllColumns();" (click)="handleItemClick(item)"></mat-row>
+
+    </mat-table>
+</ng-container>

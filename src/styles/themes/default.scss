@@ -1,0 +1,42 @@
+
+@import '~@angular/material/theming';
+
+@import 'palettes';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://www.google.com/design/spec/style/color.html
+$atmosferia-light-primary: mat-palette($mat-blue-grey);
+$atmosferia-light-accent:  mat-palette($mat-orange);
+
+// The warn palette is optional (defaults to red).
+$atmosferia-light-warn:    mat-palette($mat-deep-orange);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$atmosferia-light-theme:   mat-light-theme($atmosferia-light-primary, $atmosferia-light-accent, $atmosferia-light-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($atmosferia-light-theme);
+
+.dark-theme{
+    color:$light-primary-text;
+
+    $atmosferia-dark-primary: mat-palette($mat-deep-orange);
+    $atmosferia-dark-accent:  mat-palette($mat-orange);
+    $atmosferia-dark-warn:    mat-palette($mat-deep-orange);
+    $atmosferia-dark-theme:   mat-dark-theme($atmosferia-dark-primary, $atmosferia-dark-accent, $atmosferia-dark-warn);
+
+    @include angular-material-theme($atmosferia-dark-theme);
+
+    .mat-dialog-container {
+        background: map_get($mat-dark-theme-background, 'background');
+    }
+}

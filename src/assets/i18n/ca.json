@@ -1,0 +1,41 @@
+{
+    "LOGIN": {
+        "TITLE": "Iniciar sessió",
+        "USERNAME": "Usuari",
+        "USER-HINT": "Camp sensible a les majúscules",
+        "PASSWORD": "Contrasenya",
+        "RECOVER": "Has oblidat l'usuari o la contrassenya?",
+        "BUTTON": "Entrar"
+    },
+    "NAVBAR": {
+        "LIGHT": "Clar",
+        "DARK": "Fosc",
+        "LOGOUT": "Sortir"
+    },
+    "USER_PROFILE": {
+        "SELECT_LANGUAGE": "Canvia l'idioma",
+        "RESET": "Canvia la contrasenya"
+    },
+    "DASHBOARD": {
+        "CLIENTS": "Administrar Clients",
+        "USERS": "Administrar Usuaris",
+        "INSTALLATIONS": "Administrar Instal·lacions",
+        "SENSORS": "Administrar Sensors",
+        "VARIABLES": "Administrar Variables",
+        "GRAPHICS": "Administrar Gràfics",
+        "SHIPS": "Administrar Vaixells",
+        "CONTROL-USERS": "Controlar Usuaris",
+        "SETTINGS": "Altres opcions"
+    },
+    "ENTITY_MODIFIER": {
+        "DISPLAY_COLUMNS": "Mostrar columnes",
+        "ADD": "Afegir",
+        "DELETE": "El·liminar",
+        "DELETE_SELECTED":"El·liminar seleccionats"
+    },
+    "CHANGE_DATA_DIALOG": {
+        "CANCEL": "Cancel·lar",
+        "SAVE": "Guardar",
+        "CREATE": "Crear"
+    }
+}

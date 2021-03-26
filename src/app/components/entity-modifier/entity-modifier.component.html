@@ -1,0 +1,17 @@
+
+<div class="mat-app-background">
+    <div class="container">
+        <app-table [data]="entities"
+                   [columns]="['name']"
+                   [sortableColumns]="['name']"
+                   (onItemClick)="openDialog($event)"
+                   (onDeleteClick)="deleteEntities($event)">
+        </app-table>
+
+        <button mat-mini-fab id="create-button" (click)="createEntity()"
+                [title]="'ENTITY_MODIFIER.ADD' | translate">
+            <mat-icon class="icon">add</mat-icon>
+        </button>
+
+    </div>
+</div>

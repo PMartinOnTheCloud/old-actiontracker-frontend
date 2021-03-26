@@ -1,0 +1,112 @@
+
+@import '../../../styles/common';
+
+.container{
+    padding: 0;
+    min-height: 0;
+}
+
+#appTitle{
+    float: left;
+}
+
+.lang-select {
+
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: 0px;
+    background-color: transparent;
+    padding: 5px;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
+
+mat-toolbar {
+
+    height: $menu-height;
+
+    button:first-of-type {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    #right-items {
+        float: right;
+        color: white;
+
+        mat-slide-toggle {
+            vertical-align: middle;
+        }
+
+        button {
+            font-size: 15px;
+            & + button {
+                margin-left: 10px;
+            }
+        }
+
+    }
+
+    #navbarMenu {
+        float: right;
+        display: none;
+    }
+
+}
+
+
+#logout:hover {
+    background-color: orangered;
+}
+
+button.mat-menu-item {
+    text-align: center;
+}
+
+
+
+
+@media only screen and (max-width: $tablet-width) {
+
+    mat-toolbar {
+
+        .session-options {
+            right: 0;
+        }
+
+        #navbarMenu {
+            float: right;
+            display: inline;
+        }
+
+        .session-options {
+            display: none;
+        }
+
+        #right-items mat-slide-toggle {
+            vertical-align: bottom;
+        }
+
+    }
+
+}
+
+@media only screen and (max-width: nth($screen-sizes, 2)) {
+
+    #toogleThemeText{
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: nth($screen-sizes, 1)) {
+
+    #appTitle{
+        font-size: 16px;
+    }
+
+}

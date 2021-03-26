@@ -1,0 +1,41 @@
+{
+    "LOGIN": {
+        "TITLE": "Iniciar sessión",
+        "USERNAME": "Usuario",
+        "USER-HINT": "Campo sensible a las mayúsculas",
+        "PASSWORD": "Contraseña",
+        "RECOVER": "Has olvidado tu usuario o contraseña?",
+        "BUTTON": "Entrar"
+    },
+    "NAVBAR": {
+        "LIGHT": "Claro",
+        "DARK": "Oscuro",
+        "LOGOUT": "Salir"
+    },
+    "USER_PROFILE": {
+        "SELECT_LANGUAGE": "Cambia el idioma",
+        "RESET": "Cambia la contraseña"
+    },
+    "DASHBOARD": {
+        "CLIENTS": "Adminsitrar Clientes",
+        "USERS": "Adminsitrar Usuarios",
+        "INSTALLATIONS": "Adminsitrar Instalaciones",
+        "SENSORS": "Adminsitrar Sensores",
+        "VARIABLES": "Adminsitrar Variables",
+        "GRAPHICS": "Adminsitrar Gráficos",
+        "SHIPS": "Adminsitrar Barcos",
+        "CONTROL-USERS": "Controlar Usuarios",
+        "SETTINGS": "Otras opciones"
+    },
+    "ENTITY_MODIFIER": {
+        "DISPLAY_COLUMNS": "Mostrar columnas",
+        "ADD": "Añadir",
+        "DELETE": "Eliminar",
+        "DELETE_SELECTED":"Eliminar seleccionados"
+    },
+    "CHANGE_DATA_DIALOG": {
+        "CANCEL": "Cancelar",
+        "SAVE": "Guardar",
+        "CREATE": "Crear"
+    }
+}

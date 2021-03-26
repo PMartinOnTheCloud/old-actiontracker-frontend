@@ -1,0 +1,20 @@
+
+<div class="table">
+
+    <div>
+        <h1 mat-dialog-title class="centered-inline dialog-header">
+            {{data.title}}
+        </h1>
+    </div>
+
+    <div mat-dialog-content>
+        <div>
+            <p>{{data.message}}</p>
+        </div>
+    </div>
+
+    <div mat-dialog-actions>
+        <button mat-raised-button [mat-dialog-close]="false">{{data.cancelText}}</button>
+        <button mat-raised-button color="accent" [mat-dialog-close]="true">{{data.confirmText}}</button>
+    </div>
+</div>

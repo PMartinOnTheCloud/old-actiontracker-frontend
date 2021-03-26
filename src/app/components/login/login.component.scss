@@ -1,0 +1,54 @@
+
+@import '../../../styles/common';
+
+.container{
+    padding: 0;
+}
+
+#forgot-link{
+    color: grey;
+    float: left;
+    font-size: 12px;
+}
+
+mat-card{
+    width: 400px;
+
+    .full-width {
+        width: 100%;
+    }
+
+    form {
+
+        width: 250px;
+
+        div {
+            margin-top:15px;
+        }
+
+        .right-inline{
+            margin-top: 30px;
+        }
+
+    }
+
+}
+
+@media only screen and (max-width: 450px) {
+
+    mat-card{
+        width: 100%;
+    }
+
+}
+
+.table {
+
+    padding: 10px;
+    width: 100%;
+    height: calc(98vh - #{$menu-height});
+    text-align: center;
+
+    @include verticalCenter();
+
+}

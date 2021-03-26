@@ -1,0 +1,15 @@
+
+<div [class.dark-theme]="darkTheme">
+
+    <app-navbar [title]="title"></app-navbar>
+    <div id="navSpacer"></div>
+
+    <router-outlet></router-outlet>
+
+    <div class="floating-buttons">
+        <button mat-mini-fab id="top-button" *ngIf="hasScrolled" (click)="toTop()">
+            <mat-icon class="icon">arrow_upward</mat-icon>
+        </button>
+    </div>
+
+</div>

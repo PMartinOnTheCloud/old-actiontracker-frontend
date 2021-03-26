@@ -1,0 +1,32 @@
+
+<div class="table">
+
+    <div>
+        <h1 mat-dialog-title class="centered-inline dialog-header">
+            {{clonedEntity[data.titleKey]}}
+        </h1>
+    </div>
+
+    <div mat-dialog-content>
+        <div>
+            <app-form-builder [schema]="data.schema"
+                              [item]="clonedEntity"
+                              [displayConfig]="data.displayConfig">
+            </app-form-builder>
+        </div>
+    </div>
+
+    <div mat-dialog-actions>
+        <button class="delete-icon" [mat-dialog-close]="{function:'delete', entity:clonedEntity}"><mat-icon class="icon"
+            [title]="'ENTITY_MODIFIER.DELETE' | translate">delete</mat-icon></button>
+        <button mat-raised-button [mat-dialog-close]="undefined">
+        {{'CHANGE_DATA_DIALOG.CANCEL' | translate}}
+        </button>
+        <button mat-raised-button
+                color="accent"
+                [mat-dialog-close]="{function: data.create ? 'create' : 'save', entity:clonedEntity}">
+            {{data.create ? ('CHANGE_DATA_DIALOG.CREATE' | translate) : ('CHANGE_DATA_DIALOG.SAVE' | translate)}}
+        </button>
+    </div>
+
+</div>

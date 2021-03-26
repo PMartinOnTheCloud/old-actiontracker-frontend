@@ -1,0 +1,43 @@
+<div class="mat-app-background">
+    <div class="container">
+        <div>
+            <mat-card>
+                <mat-card-title>
+                    <mat-icon class="person-icon">account_circle</mat-icon>
+                    <span id="profile-title">{{username}}</span>
+                </mat-card-title>
+                <div class="profile-content">
+                    <ng-container *ngIf="user!=undefined">
+                        <mat-list>
+                            <ng-container *ngFor="let key of user | keys">
+                                <mat-list-item *ngIf="checkIfPropExist(key)">
+                                    <mat-icon matListIcon>fiber_manual_record</mat-icon>
+                                    <u>{{key}}:</u> {{user[key]}}
+                                    <mat-icon class="icon-button" (click)="editPropValue(key)"
+                                              *ngIf="checkIfPropEditable(key)">mode_edit
+                                    </mat-icon>
+                                </mat-list-item>
+                            </ng-container>
+                        </mat-list>
+                        <label>
+                            {{ 'USER_PROFILE.SELECT_LANGUAGE' | translate }} :
+                            <select #langSelect (change)="translate.service.use(langSelect.value)" class="lang-select" id="uprofile-lang-select">
+                                <option *ngFor="let lang of translate.service.getLangs()" [value]="lang" [selected]="lang === translate.service.currentLang">{{ lang }}</option>
+                            </select>
+                        </label>
+                    </ng-container>
+                </div>
+                <div class="right-inline">
+                    <button mat-raised-button color="accent">
+                        {{ 'USER_PROFILE.RESET' | translate }}
+                    </button>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
+
+<!--
+TODO: posar validator-input
+-->
+

@@ -1,0 +1,41 @@
+{
+    "LOGIN": {
+        "TITLE": "Login",
+        "USERNAME": "Username",
+        "USER-HINT": "This field is case sensitive",
+        "PASSWORD": "Password",
+        "RECOVER": "Forgot your username or password?",
+        "BUTTON": "Login"
+    },
+    "NAVBAR": {
+        "LIGHT": "Light",
+        "DARK": "Dark",
+        "LOGOUT": "Logout"
+    },
+    "USER_PROFILE": {
+        "SELECT_LANGUAGE": "Change language",
+        "RESET": "Reset password"
+    },
+    "DASHBOARD": {
+        "CLIENTS": "Manage Clients",
+        "USERS": "Manage Users",
+        "INSTALLATIONS": "Manage Installations",
+        "SENSORS": "Manage Sensors",
+        "VARIABLES": "Manage Variables",
+        "GRAPHICS": "Manage Graphics",
+        "SHIPS": "Manage Ships",
+        "CONTROL-USERS": "Control Usuers",
+        "SETTINGS": "Other settings"
+    },
+    "ENTITY_MODIFIER": {
+        "DISPLAY_COLUMNS": "Display columns",
+        "ADD": "Add",
+        "DELETE": "Delete",
+        "DELETE_SELECTED": "Delete selected"
+    },
+    "CHANGE_DATA_DIALOG": {
+        "CANCEL": "Cancel",
+        "SAVE": "Save",
+        "CREATE": "Create"
+    }
+}

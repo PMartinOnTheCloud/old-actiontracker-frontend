@@ -1,0 +1,38 @@
+
+<div class="mat-app-background">
+    <div class="table">
+        <div>
+            <mat-card class="centered-block">
+
+                <!--<mat-card-title>Login</mat-card-title>-->
+                <mat-card-title>{{ 'LOGIN.TITLE' | translate }}</mat-card-title>
+
+                <form class="centered-block" (ngSubmit)="isValid() && onFormSubmit()" #loginForm="ngForm">
+
+                    <app-validator-input [(model)]="username" [required]="true" [placeholder]="'LOGIN.USERNAME' | translate"
+                                         [hint]="'LOGIN.USER-HINT' | translate">
+                    </app-validator-input>
+
+                    <app-validator-input [(model)]="password" [type]="'password'" [required]="true"
+                                          [placeholder]="'LOGIN.PASSWORD' | translate">
+                    </app-validator-input>
+
+                    <mat-error *ngIf="authFailed">
+                        <br/> User or password is
+                        <strong>wrong</strong>
+                    </mat-error>
+                    <a id="forgot-link" routerLink="/recover-user-or-password" routerLinkActive="active-link">
+                        {{ 'LOGIN.RECOVER' | translate }}
+                    </a>
+                    <!-- Maybe this is unnecessary. With the fields in red should be enough -->
+                    <div class="right-inline">
+                        <button mat-raised-button color="accent">                        
+                            {{ 'LOGIN.BUTTON' | translate }}
+                        </button>
+                    </div>
+                </form>
+
+            </mat-card>
+        </div>
+    </div>
+</div>

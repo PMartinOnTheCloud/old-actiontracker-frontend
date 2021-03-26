@@ -1,0 +1,65 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'styles/normalize';
+@import 'styles/common';
+
+
+// Angular material default theme
+//@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import 'styles/themes/default';
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $grey-less;
+}
+
+.container {
+    padding: 20px 10px;
+    min-height: calc(100vh - #{$menu-height});
+}
+app-navbar {
+    z-index:1;
+    position: fixed;
+    width: 100%;
+}
+
+#navSpacer {
+    height:$menu-height;
+}
+
+.flex-container {
+    padding: 0;
+    list-style: none;
+
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: inline-flex;
+
+    -webkit-flex-flow: wrap row;
+    flex-flow: wrap row;
+}
+
+.mat-app-background {
+    min-height: calc(100vh - #{$menu-height});
+}
+
+//recover user or password
+
+.mat-step-icon {
+    height: 37px !important;
+    width: 37px !important;
+}
+
+.mat-step-icon-not-touched {
+    height: 37px !important;
+    width: 37px !important;
+}

@@ -1,0 +1,17 @@
+<div class="mat-app-background">
+    <div class="container">
+
+        <div class="flex-container">
+
+            <dashboard-element
+                *ngFor="let dashboardItem of dashboardItems"
+                [icon]="dashboardItem.icon"
+                [route]="dashboardItem.route"
+                [description]="dashboardItem.description"
+                [color]="dashboardItem.color">
+            </dashboard-element>
+
+        </div>
+
+    </div>
+</div>

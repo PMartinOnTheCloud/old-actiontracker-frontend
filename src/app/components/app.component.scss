@@ -1,0 +1,21 @@
+
+@import '../../styles/common';
+
+.floating-buttons{
+    z-index:1500;
+    position:fixed;
+    bottom:15px;
+    left:15px;
+}
+
+#top-button{
+    display: none;
+}
+
+@media only screen and (max-width: $tablet-width) {
+
+    #top-button {
+        display: block;
+    }
+
+}

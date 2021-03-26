@@ -1,0 +1,121 @@
+
+@import '../../../styles/common';
+@import '../../../styles/variables/layout';
+
+
+mat-table {
+    width: 100%;
+
+    mat-row {
+
+        cursor: pointer;
+        @include noSelect();
+
+        &:hover {
+            background-color: $grey-less;
+        }
+    }
+
+    .mat-column-select {
+        overflow: initial;
+    }
+
+}
+
+:host-context(.dark-theme) mat-row:hover {
+    background-color: $grey-darker;
+}
+
+mat-card {
+
+    margin-bottom: 15px;
+
+    .display-columns {
+        font-size: 10px;
+        display: flex;
+        flex-wrap: wrap;
+
+        mat-checkbox {
+            display: inline-block;
+            margin:10px 0 0 2%;
+            flex-grow: 1;
+            height:12px;
+            width: calc(100% * (1/6) - 10px - 1px);
+        }
+    }
+
+}
+
+mat-header-cell{
+    .delete-icon {
+        margin-left: 20px;
+        margin-top: -2px;
+        position: absolute;
+    }
+}
+
+.showDisplayColumns{
+    float: right;
+    display: none;
+}
+
+@media only screen and (max-width: nth($screen-sizes, 5)) {
+
+    mat-card {
+
+        .display-columns {
+
+            mat-checkbox {
+                width: calc(100% * (1 / 5) - 10px - 1px);
+                //width: calc(100% * (1 / 4) - 10px - 1px);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: nth($screen-sizes, 4)) {
+
+    .showDisplayColumns{
+        display: inline;
+    }
+
+    mat-card {
+
+        margin-bottom: 15px;
+
+
+        .display-columns {
+            font-size: 10px;
+            display: flex;
+            flex-wrap: wrap;
+
+            mat-checkbox {
+                width: calc(100% * (1/2) - 10px - 1px);
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: nth($screen-sizes, 2)) {
+
+    #delete-all-icon{
+        margin-left: 8px;
+    }
+
+}
+
+.delete-icon {
+    color: #ff9800;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+
+    &:hover {
+        cursor: pointer;
+        color: orangered;
+    }
+
+}
+
+

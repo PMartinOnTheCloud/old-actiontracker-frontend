@@ -1,0 +1,49 @@
+
+@import '../../../styles/common';
+
+
+
+.container {
+
+    dashboard-element {
+
+        flex:1 1 auto;
+        margin: 0px 5px;
+
+        cursor: pointer;
+        transition: transform .3s ease;
+
+        width: 180px;
+        height: 180px;
+
+        &:hover {
+            transform: translateY(-4px);
+        }
+
+    }
+}
+
+@media only screen and (max-width: $tablet-width) {
+
+    .container dashboard-element {
+
+        transition: none;
+
+
+        &:hover {
+            transform: none;
+        }
+    }
+
+}
+
+@media only screen and (max-width: $mobile-width) {
+
+    .container dashboard-element {
+        height: 10px;
+        width: 100%;
+        margin-bottom: 65px;
+    }
+
+}
+

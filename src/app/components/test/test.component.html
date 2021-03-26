@@ -1,0 +1,44 @@
+
+<div class="table">
+
+    <div>
+        <mat-card class="centered-block">
+            <!--<button mat-raised-button>Basic</button>-->
+            <!--<button mat-raised-button color="primary">Primary</button>-->
+            <!--<button mat-raised-button color="accent">Accent</button>-->
+            <!--<button mat-raised-button color="warn">Warn</button>-->
+
+            <app-validator-input [required]="false"
+                                 placeholder="test1"
+                                 [instant]="false"
+                                 [(model)]="test1Model"
+                                 [validators]="validatorsTest1">
+            </app-validator-input>
+
+            {{test1Model}}
+
+            <app-validator-input [required]="true"
+                                 placeholder="test2"
+                                 [validators]="validatorsTest2">
+            </app-validator-input>
+
+            <canvas baseChart
+                    [datasets]="analogicData"
+                    [labels]="lineChartLabels"
+                    [options]="lineChartOptions"
+                    [colors]="lineChartColors"
+                    [legend]="lineChartLegend"
+                    [chartType]="lineChartType"></canvas>
+
+            <canvas baseChart
+                    [datasets]="digitalData"
+                    [labels]="lineChartLabels"
+                    [options]="lineChartOptions"
+                    [colors]="lineChartColors"
+                    [legend]="lineChartLegend"
+                    [chartType]="lineChartType"></canvas>
+
+        </mat-card>
+    </div>
+
+</div>

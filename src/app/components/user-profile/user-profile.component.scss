@@ -1,0 +1,44 @@
+.profile-content{
+
+}
+
+#uprofile-lang-select{
+    color: #ff7d00;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.person-icon{
+    position: absolute;
+    font-size: 27px;
+}
+
+#profile-title{
+    margin-left: 35px;
+}
+
+mat-grid-tile{
+    button{
+        width: 75%;
+        height: 75%;
+    }
+}
+
+mat-list{
+    margin-bottom: 25px;
+}
+
+mat-list-item{
+
+    u{
+        margin-right: 10px;
+    }
+
+    mat-icon{
+        margin-left: 5px;
+    }
+
+    .icon-button{
+        cursor: pointer;
+    }
+}

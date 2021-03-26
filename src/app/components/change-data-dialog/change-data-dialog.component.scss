@@ -1,0 +1,36 @@
+
+@import '../../../styles/common';
+
+.table {
+
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+
+    @include verticalCenter();
+
+    div{
+        display: block;
+    }
+
+    .mat-dialog-actions{
+        text-align: right;
+    }
+
+    .delete-icon{
+        color: #ff9800;
+        background-color: transparent;
+        border: none;
+        float: left;
+        margin-top: 5px;
+        font-size: 30px;
+        cursor: pointer;
+        transition: 0.5s ;
+
+        &:hover{
+            color: red;
+
+        }
+    }
+
+}

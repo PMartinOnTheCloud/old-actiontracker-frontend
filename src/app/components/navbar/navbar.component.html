@@ -1,0 +1,43 @@
+<mat-toolbar color="primary">
+    <div class="navItemsContainer container">
+
+        <button id="appTitle" mat-button routerLink="/dashboard" routerLinkActive="active">{{title}}</button>
+
+        <!-- Mobile -->
+        <mat-menu #appMenu="matMenu">
+            <button mat-menu-item (click)="goProfile()">{{username}}</button>
+            <button mat-menu-item style="color:orangered" (click)="logout()">
+                {{'NAVBAR.LOGOUT' | translate}}
+            </button>
+        </mat-menu>
+
+        <button *ngIf="userIsLogged" id="navbarMenu" mat-icon-button [matMenuTriggerFor]="appMenu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+
+        <span id="right-items">
+            <mat-slide-toggle (change)="themeService.swapTheme()" [checked]="darkTheme">
+                <div id="toogleThemeText">
+                    {{(darkTheme ?  'NAVBAR.DARK' : 'NAVBAR.LIGHT') | translate}}
+                </div>
+            </mat-slide-toggle>
+
+            <span class="session-options" *ngIf="userIsLogged">
+                <button mat-button (click)="goProfile()">{{username}}</button>
+                <button mat-button *ngIf="userIsLogged" id="logout" (click)="logout()">
+                    {{'NAVBAR.LOGOUT' | translate}}
+                </button>
+            </span>
+
+            <label *ngIf="!userIsLogged">
+                <select #langSelect (change)="translate.service.use(langSelect.value)" class="lang-select">
+                    <option *ngFor="let lang of translate.service.getLangs()" [value]="lang"
+                            [selected]="lang === translate.service.currentLang">
+                        {{ lang }}
+                    </option>
+                </select>
+            </label>
+        </span>
+
+    </div>
+</mat-toolbar>

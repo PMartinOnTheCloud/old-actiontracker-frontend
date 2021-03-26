@@ -1,0 +1,17 @@
+
+@import '../../../styles/common';
+
+.table {
+
+    padding: 10px;
+    width: 100%;
+    height: calc(100vh - #{$menu-height});
+    text-align: center;
+
+    @include verticalCenter();
+
+    mat-card {
+        width: 800px;
+    }
+
+}

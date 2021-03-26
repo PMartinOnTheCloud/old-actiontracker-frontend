@@ -1,0 +1,66 @@
+
+@import '../../../styles/common';
+
+.full-width {
+    width: 100%;
+}
+
+.icon{
+    font-size: 100px;
+}
+
+a {
+    text-decoration: none;
+}
+
+mat-icon {
+    width: auto;
+    height: auto;
+}
+
+@media only screen and (max-width: 572px) {
+
+    mat-icon{
+
+        float: left;
+
+    }
+
+    .icon{
+        font-size: 35px;
+    }
+
+}
+
+@media only screen and (max-width: 700px) {
+
+    .dashboard-item {
+
+        //TODO: make not to seem weird when scrolling on phones or during long clicks
+        &:active{
+            background-color: rgba(255, 126, 0, 0.43);
+            transition: background-color 500ms linear;
+
+        }
+
+        &:hover {
+            box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12)!important;
+        }
+
+    }
+
+}
+
+.dashboard-item {
+
+    transition: box-shadow .3s ease;
+
+    mat-card-title {
+        text-align: center;
+    }
+
+    &:hover {
+        box-shadow: 0 3px 9px 4px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    }
+
+}
